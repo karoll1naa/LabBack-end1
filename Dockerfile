@@ -1,8 +1,5 @@
-FROM openjdk:17-jdk-alpine
-
-WORKDIR /app
-
-COPY target/LabBack-end1-0.0.1-SNAPSHOT.jar app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
+FROM openjdk:17-jdk-slimWORKDIR/app
+COPY . /app
+RUN apt-get update && apt-get install -y maven && mvn clean package
+ENTRYPOINT ["java", "-jar", "target/LabsBackend-0.0.1-SNAPSHOT.jar"]
+EXPOSE 8080
