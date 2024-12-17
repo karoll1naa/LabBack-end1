@@ -1,8 +1,19 @@
 package main.labbackend1.Models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "categories")
 public class Category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private Boolean isGlobal;
+    private Long userId;
 
     public Long getId(){
         return id;
@@ -15,5 +26,20 @@ public class Category {
     }
     public void setName(String name){
         this.name = name;
+    }
+    public Boolean getIsGlobal() {
+        return isGlobal;
+    }
+
+    public void setIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
