@@ -6,8 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-@EntityScan(basePackages = "main.labbackend2.Models")
-
+@EntityScan(basePackages = "main.labbackend1.Models")
 public class LabBackEnd1Application {
 
 	public static void main(String[] args) {
